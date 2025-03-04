@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[     14820,        377]
-NotebookOptionsPosition[     12654,        329]
-NotebookOutlinePosition[     13062,        345]
-CellTagsIndexPosition[     13019,        342]
+NotebookDataLength[     15368,        389]
+NotebookOptionsPosition[     13017,        339]
+NotebookOutlinePosition[     13422,        355]
+CellTagsIndexPosition[     13379,        352]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -325,10 +325,20 @@ Cell[BoxData[
  CellChangeTimes->{3.949722500482296*^9, 3.9497226314229527`*^9, 
   3.949722923582567*^9},
  CellLabel->"Out[22]=",ExpressionUUID->"6b73a029-d57d-b44a-b9da-1b2b252bd019"]
-}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"<<", "JLink`"}]], "Input",
+ CellChangeTimes->{{3.950052261158186*^9, 3.9500522653435535`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"accd38bd-676f-d14e-9d55-3d53aedc6d99"],
+
+Cell[BoxData["JavaBlock"], "Input",
+ CellChangeTimes->{{3.950052267510977*^9, 
+  3.950052269702816*^9}},ExpressionUUID->"c9bc9c6b-965e-1548-8984-\
+0201aea2a764"]
 },
-WindowSize->{910.5, 834},
-WindowMargins->{{138, Automatic}, {57.75, Automatic}},
+WindowSize->{958.5, 999.75},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"ed69abe1-b5c3-9e4b-b937-efe95809e396"
@@ -391,7 +401,9 @@ Cell[11333, 294, 382, 8, 28, "Input",ExpressionUUID->"14f4c795-7a83-0048-a69a-00
 Cell[CellGroupData[{
 Cell[11740, 306, 471, 9, 28, "Input",ExpressionUUID->"fc5bf493-cfff-b444-827f-d688255a05c2"],
 Cell[12214, 317, 424, 9, 32, "Output",ExpressionUUID->"6b73a029-d57d-b44a-b9da-1b2b252bd019"]
-}, Open  ]]
+}, Open  ]],
+Cell[12653, 329, 196, 3, 28, "Input",ExpressionUUID->"accd38bd-676f-d14e-9d55-3d53aedc6d99"],
+Cell[12852, 334, 161, 3, 28, "Input",ExpressionUUID->"c9bc9c6b-965e-1548-8984-0201aea2a764"]
 }
 ]
 *)
