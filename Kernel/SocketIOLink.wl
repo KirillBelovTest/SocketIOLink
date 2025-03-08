@@ -2,14 +2,16 @@
 
 BeginPackage["KirillBelov`SocketIOLink`", {
     "KirillBelov`Objects`", 
-    "KirillBelov`CSockets`", 
+    "KirillBelov`CSockets`TCP`", 
+    "KirillBelov`CSockets`Handler`", 
     "KirillBelov`LTP`", 
     "JLink`"
 }];
 
 
 SocketIOConnect::usage = 
-"SocketIOConnect[url, headers] connecting to the specific endpoint and returns IOSocketObject."; 
+"SocketIOConnect[url] connecting to the specific endpoint and returns IOSocketObject.
+SocketIOConnect[url, headers] connecting using specific extra HTTP headers."; 
 
 
 IOSocketListen::usage = 
@@ -28,45 +30,77 @@ Begin["`Private`"];
 
 
 CreateType[SocketIOObject, {
-    "Socket", "Listener", "Port", "JAsk", "JListener"
+    "ListenSocket", 
+    "Listener", 
+    "JavaIOSocket", 
+    "JavaIOListener", 
+    "JavaIOAck", 
+    "ForwardPort", 
+    "JLTPClient"
 }]; 
 
 
 Options[SocketIOConnect] = {
     "HTTPHeaders" -> <||>, 
-    "ForwardPort" -> Automatic
+    "ForwardPort" -> Automatic, 
+    "EventHandler" -> socketIOEventHandler
 }; 
 
 
 SocketIOConnect[url_String, OptionsPattern[]] := 
 Block[{
-    socket, connect, 
+    jsocket, connect, jlistener, jack, jltpClient, listener, port,
     httpHeaders = OptionValue["HTTPHeaders"], 
-    frowardPort = OptionValue["ForwardPort"]
+    forwardPort = OptionValue["ForwardPort"], 
+    eventHandler = OptionValue["EventHandler"]
 }, 
-    socket = createJavaIOSocket[url, httpHeaders]; 
-    socket@connect[]; 
+    If[forwardPort === Automatic, 
+        port = RandomInteger[{20000, 60000}], 
+        port = forwardPort
+    ]; 
 
-    port = RandomInteger[20000, 60000]; 
+    listener = createLTPListener[port, eventHandler]; 
 
-    server = CSocketOpen[port]; 
+    jsocket = createSocketIOJavaObject[url, httpHeaders]; 
+    jsocket@connect[]; 
 
-    ltp = LTPHandler[]; 
+    jltpClient = JavaNew[LTPClientClass, port];
 
-    handler = CSocketHandler[]; 
+    jlistener = JavaNew[LTPForwardListenerClass, jltpClient]; 
+    jack = JavaNew[LTPForwardAckClass, jltpClient]; 
 
-    SocketIOObject[<|
-        "Socket" -> socket, 
-        "Listener" -> listener
-    |>]
+    SocketIOObject[
+        "Listener" -> listener, 
+        "JSocket" -> jsocket, 
+        "JListener" -> jlistener, 
+        "JAck" -> jack, 
+        "ForwardPort" -> port, 
+        "JLTPClient" -> jltpClient
+    ]
 ]; 
 
 
-SocketIOListen[SocketIOObject[assoc_Association?AssociationQ], event_String] := 
-{}; 
+SocketIOObject /: SocketIOListen[connection_SocketIOObject, event_String] := 
+Block[{
+	jsocket = connection["JSocket"], 
+	on, 
+	jlistener = connection["JListener"]
+}, 
+	jsocket@on[event, jlistener]; 
+]; 
 
 
-createJavaIOSocket[url_String, httpHeaders: _Association?AssociationQ: <||>] := 
+SocketIOObject /: SocketEmit[connection_SocketIOObject, event_String] := 
+Block[{
+	jsocket = connection["JSocket"], 
+	on, 
+	jlistener = connection["JListener"]
+}, 
+	jsocket@on[event, jlistener]; 
+]; 
+
+
+createSocketIOJavaObject[url_String, httpHeaders: _Association?AssociationQ: <||>] := 
 Block[{socket, headers, options, add, put, extraHeaders}, 
     IOClass; 
 
@@ -93,7 +127,29 @@ Block[{socket, headers, options, add, put, extraHeaders},
 ]; 
 
 
+createLTPListener[port_Integer?Positive, eventHandler_] := 
+With[{ltp = LTPHandler[]}, 
+    Block[{server, handler, listener}, 
+        ltp["MessageHandler"] = eventHandler; 
+        ltp["Deserializer"] = ByteArrayToString; 
+        ltp["Responsible"] = False; 
 
+        handler = CSocketHandler[]; 
+        
+        handler["Accumulator", "LTP"] = LTPPacketQ -> LTPPacketLength; 
+        handler["Handler", "LTP"] = LTPPacketQ -> ltp; 
+
+        server = CSocketOpen[port]; 
+        listener = SocketListen[server, handler]; 
+        
+        (*Return*)
+        listener
+    ]
+]; 
+
+
+socketIOEventHandler[packet_] := 
+Echo[packet]; 
 
 
 IOClass := IOClass = 
@@ -106,6 +162,10 @@ LoadJavaClass["io.socket.client.IO$Options"];
 
 JSONObjectClass := JSONObjectClass = 
 LoadJavaClass["org.json.JSONObject"]; 
+
+
+LTPClientClass := LTPClientClass = 
+LoadJavaClass["kirillbelov.ltp.LTPClient"];
 
 
 LTPForwardAckClass := LTPForwardAckClass = 
