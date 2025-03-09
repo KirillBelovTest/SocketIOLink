@@ -1,10 +1,10 @@
 package kirillbelov.socketiolink;
 
-import io.socket.emitter.Emitter;
-import kirillbelov.ltp.LTPClient;
-
 import java.io.IOException;
 import java.util.Arrays;
+
+import io.socket.emitter.Emitter;
+import kirillbelov.ltp.LTPClient;
 
 public class LTPForwardListener implements Emitter.Listener {
     private LTPClient ltpClient; 
@@ -25,6 +25,7 @@ public class LTPForwardListener implements Emitter.Listener {
     @Override
     public void call(Object... args){
         try {
+            System.out.println("LTPForwardListener.call: " + Arrays.toString(args));
             ltpClient.sendMessage(Arrays.toString(args));
         } catch (IOException e) {
             
