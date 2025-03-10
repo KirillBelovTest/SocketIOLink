@@ -25,6 +25,7 @@ public class LTPForwardListener implements Emitter.Listener {
     @Override
     public void call(Object... args){
         try {
+            System.out.println("LTPForwardListener.call: " + Arrays.toString(args)); 
             ltpClient.sendMessage(Arrays.toString(args));
         } catch (IOException e) {
             

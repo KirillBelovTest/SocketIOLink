@@ -25,8 +25,12 @@ public class LTPForwardAck implements Ack {
 
     @Override
     public void call(Object... args){
-        System.out.println("LTPForwardAck.call: " + Arrays.toString(args));
-        
-        ltpClient.sendMessage(Arrays.toString(args));
+        try{
+            System.out.println("LTPForwardAck.call: " + Arrays.toString(args));
+            ltpClient.sendMessage(Arrays.toString(args));
+        } 
+        catch (IOException e){
+
+        }
     }
 }

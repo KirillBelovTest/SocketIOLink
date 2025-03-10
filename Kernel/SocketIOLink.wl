@@ -14,12 +14,12 @@ SocketIOConnect::usage =
 SocketIOConnect[url, headers] connecting using specific extra HTTP headers."; 
 
 
-IOSocketListen::usage = 
-"IOSocketListen[conn, event, func] listen specific event type and call func as handler."; 
+SocketIOListen::usage = 
+"SocketIOListen[conn, event] listen specific event type."; 
 
 
-IOSocketEmit::usage = 
-"IOSocketEmit[conn, event, obj] emit obj with specific event type."; 
+SocketIOEmit::usage = 
+"SocketIOEmit[conn, event, obj] emit obj with specific event type."; 
 
 
 SocketIOObject::usage = 
@@ -30,125 +30,118 @@ Begin["`Private`"];
 
 
 CreateType[SocketIOObject, {
+    "Endpoint", 
+    "HTTPHeaders", 
+    "Handler", 
+    
+    "ListenPort", 
     "ListenSocket", 
+    "ListenHandler",  
     "Listener", 
+
     "JavaIOSocket", 
     "JavaIOListener", 
     "JavaIOAck", 
-    "ForwardPort", 
-    "JLTPClient"
+    "JavaLTPClient"
 }]; 
 
 
 Options[SocketIOConnect] = {
     "HTTPHeaders" -> <||>, 
-    "ForwardPort" -> Automatic, 
-    "EventHandler" -> socketIOEventHandler
+    "Handler" -> handlerFunc
 }; 
 
 
-SocketIOConnect[url_String, OptionsPattern[]] := 
-Block[{
-    jsocket, connect, jlistener, jack, jltpClient, listener, port,
-    httpHeaders = OptionValue["HTTPHeaders"], 
-    forwardPort = OptionValue["ForwardPort"], 
-    eventHandler = OptionValue["EventHandler"]
+SocketIOConnect[endpoint_String, OptionsPattern[]] := 
+With[{
+    socketObj = SocketIOObject[], 
+    listenHandler = CSocketHandler[], 
+    ltpHandler = LTPHandler[]
 }, 
-    If[forwardPort === Automatic, 
-        port = RandomInteger[{20000, 60000}], 
-        port = forwardPort
-    ]; 
+    Block[{
+        httpHeaders = OptionValue["HTTPHeaders"], 
+        handler = OptionValue["Handler"], 
+        listenPort = RandomInteger[{20000, 60000}], 
+        listenSocket, 
+        listener, 
+        
+        javaIOSocket, 
+        javaIOOptions, 
+        javaIOHeaders, 
+        javaIOListener, 
+        javaIOAck, 
+        javaLTPClient, 
+        
+        connect, 
+        extraHeaders, 
+        add, 
+        put
+    }, 
+        socketObj["Endpoint"] = endpoint; 
+        socketObj["HTTPHeaders"] = httpHeaders; 
+        socketObj["Handler"] = handler; 
 
-    listener = createLTPListener[port, eventHandler]; 
+        socketObj["ListenPort"] = listenPort; 
 
-    jsocket = createSocketIOJavaObject[url, httpHeaders]; 
-    jsocket@connect[]; 
+        listenSocket = CSocketOpen[listenPort]; 
+        socketObj["ListenSocket"] = listenSocket; 
 
-    jltpClient = JavaNew[LTPClientClass, port];
+        listener = SocketListen[listenSocket, listenHandler]; 
+        socketObj["Listener"] = listener; 
+        socketObj["ListenerHandler"] = listenHandler; 
 
-    jlistener = JavaNew[LTPForwardListenerClass, jltpClient]; 
-    jack = JavaNew[LTPForwardAckClass, jltpClient]; 
+        listenHandler["Accumulator", "LTP"] = LTPPacketQ -> LTPPacketLength; 
+        listenHandler["Handler", "LTP"] = LTPPacketQ -> ltpHandler; 
 
-    SocketIOObject[
-        "Listener" -> listener, 
-        "JSocket" -> jsocket, 
-        "JListener" -> jlistener, 
-        "JAck" -> jack, 
-        "ForwardPort" -> port, 
-        "JLTPClient" -> jltpClient
+        ltpHandler["Responsible"] = False; 
+        ltpHandler["Deserializer"] = ByteArrayToString; 
+        ltpHandler["Handler"] := socketObj["Handler"]; 
+
+        IOClass; 
+
+        javaIOOptions = JavaNew[IOOptionsClass];
+
+        javaIOHeaders = JavaNew[HashMapClass]; 
+
+        KeyValueMap[Function[{key, value}, 
+            Block[{
+                valueList = JavaNew[ArrayListClass], 
+                keyObject = MakeJavaObject[key]
+            }, 
+                valueList@add[MakeJavaObject[value]]; 
+                javaIOHeaders@put[keyObject, valueList]; 
+            ]
+        ], httpHeaders]; 
+
+        javaIOOptions@extraHeaders = javaIOHeaders; 
+
+        javaIOSocket = io`socket`client`IO`socket[endpoint, javaIOOptions]; 
+        
+        socketObj["JavaIOSocket"] = javaIOSocket; 
+
+        javaIOSocket@connect[]; 
+
+        javaLTPClient = JavaNew[LTPClientClass, listenPort]; 
+        socketObj["JavaLTPClient"] = javaLTPClient; 
+
+        javaIOListener = JavaNew[LTPForwardListenerClass, javaLTPClient]; 
+        socketObj["JavaIOListener"] = javaIOListener; 
+
+        javaIOAck = JavaNew[LTPForwardAckClass, javaLTPClient]; 
+        socketObj["JavaIOAck"] = javaIOAck; 
+
+        socketObj
     ]
 ]; 
 
 
-SocketIOObject /: SocketIOListen[connection_SocketIOObject, event_String] := 
-Block[{
-	jsocket = connection["JSocket"], 
-	on, 
-	jlistener = connection["JListener"]
-}, 
-	jsocket@on[event, jlistener]; 
+SocketIOListen[socketObj_SocketIOObject, eventName_String] := 
+Block[{on, javaIOSocket = socketObj["JavaIOSocket"], javaIOListener}, 
+    javaIOSocket@on[eventName, javaIOListener]
 ]; 
 
 
-SocketIOObject /: SocketEmit[connection_SocketIOObject, event_String] := 
-Block[{
-	jsocket = connection["JSocket"], 
-	on, 
-	jlistener = connection["JListener"]
-}, 
-	jsocket@on[event, jlistener]; 
-]; 
-
-
-createSocketIOJavaObject[url_String, httpHeaders: _Association?AssociationQ: <||>] := 
-Block[{socket, headers, options, add, put, extraHeaders}, 
-    IOClass; 
-
-    options = JavaNew[IOOptionsClass]; 
-
-    headers = JavaNew[HashMapClass]; 
-
-    KeyValueMap[Function[{k, v}, 
-        Block[{
-            vlist = JavaNew[ArrayListClass], 
-            kobj = MakeJavaObject[k]
-        }, 
-            vlist@add[MakeJavaObject[v]]; 
-            headers@put[kobj, vlist]; 
-        ]
-    ], httpHeaders]; 
-
-    options@extraHeaders = headers; 
-
-    socket = io`socket`client`IO`socket[url, options]; 
-
-    (*Return*)
-    socket
-]; 
-
-
-createLTPListener[port_Integer?Positive, eventHandler_] := 
-With[{ltp = LTPHandler[]}, 
-    Block[{server, handler, listener}, 
-        ltp["MessageHandler"] = eventHandler; 
-        ltp["Deserializer"] = ByteArrayToString; 
-        ltp["Responsible"] = False; 
-
-        handler = CSocketHandler[]; 
-        
-        handler["Accumulator", "LTP"] = LTPPacketQ -> LTPPacketLength; 
-        handler["Handler", "LTP"] = LTPPacketQ -> ltp; 
-
-        server = CSocketOpen[port]; 
-        listener = SocketListen[server, handler]; 
-        
-        (*Return*)
-        listener
-    ]
-]; 
-
-
-socketIOEventHandler[packet_] := 
+handlerFunc[packet_] := 
 Echo[packet]; 
 
 
