@@ -88,7 +88,7 @@ With[{
 
         listener = SocketListen[listenSocket, listenHandler]; 
         socketObj["Listener"] = listener; 
-        socketObj["ListenerHandler"] = listenHandler; 
+        socketObj["ListenHandler"] = listenHandler; 
 
         listenHandler["Accumulator", "LTP"] = LTPPacketQ -> LTPPacketLength; 
         listenHandler["Handler", "LTP"] = LTPPacketQ -> ltpHandler; 
@@ -130,19 +130,40 @@ With[{
         javaIOAck = JavaNew[LTPForwardAckClass, javaLTPClient]; 
         socketObj["JavaIOAck"] = javaIOAck; 
 
+        (*Return*)
         socketObj
     ]
 ]; 
 
 
 SocketIOListen[socketObj_SocketIOObject, eventName_String] := 
-Block[{on, javaIOSocket = socketObj["JavaIOSocket"], javaIOListener}, 
+Block[{
+    on, 
+    javaIOSocket = socketObj["JavaIOSocket"], 
+    javaIOListener = socketObj["JavaIOListener"]
+}, 
     javaIOSocket@on[eventName, javaIOListener]
 ]; 
 
 
-handlerFunc[packet_] := 
-Echo[packet]; 
+SocketIOEmit[socketObj_SocketIOObject, eventName_String, assoc_?AssociationQ] := 
+Block[{emit, javaIOSocket = socketObj["JavaIOSocket"], javaIOAck = socketObj["JavaIOAck"]}, 
+    javaIOSocket@emit[eventName, MakeJavaObject[{toJavaJSON[assoc]}], javaIOAck]
+]; 
+
+
+handlerFunc[data_] := 
+Echo[data]; 
+
+
+toJavaJSON[assoc_?AssociationQ] := 
+Block[{json = JavaNew[JSONObjectClass], put}, 
+	KeyValueMap[json@put[#1, toJavaJSON[#2]]&, assoc]; 
+	json
+]; 
+
+toJavaJSON[value: _String | _?NumericQ] := 
+MakeJavaObject[value]; 
 
 
 IOClass := IOClass = 
