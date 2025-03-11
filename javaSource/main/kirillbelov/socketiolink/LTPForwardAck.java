@@ -6,8 +6,6 @@ import kirillbelov.ltp.LTPClient;
 import java.util.Arrays;
 import java.io.IOException;
 
-import java.util.Arrays;
-
 public class LTPForwardAck implements Ack {
     private LTPClient ltpClient; 
 
