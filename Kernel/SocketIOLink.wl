@@ -22,6 +22,10 @@ SocketIOEmit::usage =
 "SocketIOEmit[conn, event, obj] emit obj with specific event type."; 
 
 
+SocketIOSend::usage =
+"SocketIOSend[conn, obj] send obj with event type 'message'.";
+
+
 SocketIOObject::usage = 
 "SocketIOObject[] representation of SocketIO connection."; 
 
@@ -149,6 +153,12 @@ Block[{
 SocketIOEmit[socketObj_SocketIOObject, eventName_String, assoc_?AssociationQ] := 
 Block[{emit, javaIOSocket = socketObj["JavaIOSocket"], javaIOAck = socketObj["JavaIOAck"]}, 
     javaIOSocket@emit[eventName, MakeJavaObject[{toJavaJSON[assoc]}], javaIOAck]
+]; 
+
+
+SocketIOSend[socketObj_SocketIOObject, assoc_?AssociationQ] := 
+Block[{send, javaIOSocket = socketObj["JavaIOSocket"]}, 
+    javaIOSocket@send[MakeJavaObject[{toJavaJSON[assoc]}]]
 ]; 
 
 
