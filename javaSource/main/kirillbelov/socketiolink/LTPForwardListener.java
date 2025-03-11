@@ -6,6 +6,8 @@ import kirillbelov.ltp.LTPClient;
 import java.io.IOException;
 import java.util.Arrays;
 
+import org.json.JSONArray;
+
 public class LTPForwardListener implements Emitter.Listener {
     private LTPClient ltpClient; 
 
@@ -25,8 +27,15 @@ public class LTPForwardListener implements Emitter.Listener {
     @Override
     public void call(Object... args){
         try {
-            System.out.println("LTPForwardListener.call: " + Arrays.toString(args)); 
-            ltpClient.send(Arrays.toString(args));
+            JSONArray jsonArray = new JSONArray(); 
+            
+            for (Object o : args) {
+                jsonArray.put(o);
+            }
+
+            System.out.println("LTPForwardListener.call: " + jsonArray.toString()); 
+            
+            ltpClient.send(jsonArray.toString());
         } catch (IOException e) {
             
         }

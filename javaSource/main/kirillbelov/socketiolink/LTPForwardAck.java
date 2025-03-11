@@ -3,7 +3,8 @@ package kirillbelov.socketiolink;
 import io.socket.client.Ack;
 import kirillbelov.ltp.LTPClient;
 
-import java.util.Arrays;
+import org.json.JSONArray;
+
 import java.io.IOException;
 
 public class LTPForwardAck implements Ack {
@@ -24,8 +25,15 @@ public class LTPForwardAck implements Ack {
     @Override
     public void call(Object... args){
         try{
-            System.out.println("LTPForwardAck.call: " + Arrays.toString(args));
-            ltpClient.send(Arrays.toString(args));
+            JSONArray jsonArray = new JSONArray(); 
+            
+            for (Object o : args) {
+                jsonArray.put(o);
+            }
+
+            System.out.println("LTPForwardAck.call: " + jsonArray.toString()); 
+            
+            ltpClient.send(jsonArray.toString());
         } 
         catch (IOException e){
 

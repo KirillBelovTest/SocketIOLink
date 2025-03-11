@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[      5403,        147]
-NotebookOptionsPosition[      5570,        142]
-NotebookOutlinePosition[      5981,        158]
-CellTagsIndexPosition[      5938,        155]
+NotebookDataLength[      5409,        148]
+NotebookOptionsPosition[      5576,        143]
+NotebookOutlinePosition[      5987,        159]
+CellTagsIndexPosition[      5944,        156]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -137,8 +137,9 @@ Cell[BoxData[
       " ", "\"\<AggregateOHLCVEmitter\>\""}], "|>"}]}], "\n", "]"}], 
   ";"}]], "Code",
  CellChangeTimes->{{3.9506294705438595`*^9, 3.950629487705633*^9}, {
-   3.9506308361431828`*^9, 3.9506308413914185`*^9}, 3.95063135641029*^9},
- CellLabel->"In[14]:=",ExpressionUUID->"1719175d-856d-9940-a7f4-9079e7995a6a"]
+   3.9506308361431828`*^9, 3.9506308413914185`*^9}, 3.95063135641029*^9, 
+   3.9506749281715736`*^9},ExpressionUUID->"1719175d-856d-9940-a7f4-\
+9079e7995a6a"]
 },
 WindowSize->{718.5, 735},
 WindowMargins->{{Automatic, 105.75}, {Automatic, 27.75}},
@@ -161,7 +162,7 @@ Cell[1460, 33, 1339, 38, 172, "Code",ExpressionUUID->"0e8bb6ba-19ed-af48-9848-ca
 Cell[2802, 73, 879, 23, 85, "Code",ExpressionUUID->"d754d66f-68c2-0748-9539-294b62ba1404"],
 Cell[3684, 98, 1005, 19, 137, "Code",ExpressionUUID->"76783fb0-dcdc-e945-bc40-cfab0446bfad"],
 Cell[4692, 119, 341, 7, 50, "Code",ExpressionUUID->"b5967734-7d09-284c-8b6d-6e97f704c624"],
-Cell[5036, 128, 530, 12, 85, "Code",ExpressionUUID->"1719175d-856d-9940-a7f4-9079e7995a6a"]
+Cell[5036, 128, 536, 13, 85, "Code",ExpressionUUID->"1719175d-856d-9940-a7f4-9079e7995a6a"]
 }
 ]
 *)
