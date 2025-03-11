@@ -3,11 +3,13 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["KirillBelov/SocketIOLink", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellTags->{"Name", "TemplateCell", "Title"},
  CellID->6731807,ExpressionUUID->"59ddfc0e-ab53-af46-9d19-7799f54b24be"],
 
 Cell["SocketIO Link", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellTags->{"Description", "TemplateCell"},
  CellID->79067952,ExpressionUUID->"44532380-ea14-cc41-97cc-dc36135ae99e"],
 
@@ -31,8 +33,9 @@ Cell[CellGroupData[{
 
 Cell["", "FileManagerTopSpacer",
  CellGroupingRules->{"SectionGrouping", 99},
+ TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->861629210,ExpressionUUID->"2050310e-5f92-ec43-bdad-f848c116ed27"],
+ CellID->861629210,ExpressionUUID->"e134f98b-e1e5-0749-af28-9e96a94a2df4"],
 
 Cell[TextData[Cell[BoxData[
  InterpretationBox[
@@ -55,17 +58,1212 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Documentation"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"c3001fe1-b8d4-e64e-acd5-be705afe7637"]], \
+   "Text"}]],ExpressionUUID->"a5b67c10-9e99-6245-a1c8-097a846ca263"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerDocumentationIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->682847464,ExpressionUUID->"7be38a0d-2876-344b-8cf3-2e0ca8459f2b"],
+ CellID->682847464,ExpressionUUID->"d3f1246a-1b12-c741-87a7-246f56001f28"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"Java\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"1ffd3bed-b2f5-184a-b93d-f31eaae52ee5"]], \
+"FileManagerDirectory",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->253297003,ExpressionUUID->"0b0259a8-e3a8-1040-bc74-27eb53bc31ce"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"engine.io-client-2.1.0.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "engine.io-client-2.1.0.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "engine.io-client-2.1.0.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->86547051,ExpressionUUID->"18956496-3ae2-7144-9265-a859d55c5339"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"json-20090211.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "json-20090211.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "json-20090211.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->552440765,ExpressionUUID->"d5fd8513-65ae-834f-b68a-7cb8cbb81b62"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"LTP-1.0.0.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "LTP-1.0.0.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "LTP-1.0.0.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->59840296,ExpressionUUID->"637a8f8f-377f-354b-9b0b-8ecd44160738"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"okhttp-3.12.12.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "okhttp-3.12.12.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "okhttp-3.12.12.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->457912700,ExpressionUUID->"b156f95b-988f-7847-9d6b-d6a237c64c1d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"okio-1.15.0.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "okio-1.15.0.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "okio-1.15.0.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->814169549,ExpressionUUID->"53486bac-d974-1e43-94c7-b1d495d30a5f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"socket.io-client-2.1.1.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "socket.io-client-2.1.1.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "socket.io-client-2.1.1.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->102430100,ExpressionUUID->"7610a9e5-c7f5-a740-babb-cf201d43e3d3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"SocketIOLink-1.0.0.jar\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "Java", "SocketIOLink-1.0.0.jar"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "Java", "SocketIOLink-1.0.0.jar"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->638034172,ExpressionUUID->"8a5b1304-c772-e841-81b8-e6968d0f3dbb"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"javaOutput\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"d76cb325-c14a-2240-a1cd-c066d855c99a"]], \
+"FileManagerDirectory",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->659585901,ExpressionUUID->"3347daa5-d26c-fc44-beed-ccdc97016117"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"classes\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "classes"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"17950e12-c851-eb4e-8f59-51c3cd10edca"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->247597516,ExpressionUUID->"2cfc533d-8a75-2e4a-b521-bc9a777489b9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"kirillbelov\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[2]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "classes", "kirillbelov"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"b77f904d-39ef-9c47-9d88-d6c34159e7f6"]], \
+"FileManagerDirectory",
+ CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->529771637,ExpressionUUID->"bbbf4426-629f-d845-8e65-b78dbd1f987a"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"socketiolink\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[3]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+    "socketiolink"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"adb7be2b-c467-ce49-99be-aed35f49a625"]], \
+"FileManagerDirectory",
+ CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 130},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->9113246,ExpressionUUID->"c2523ae9-e4bb-1045-91ec-fc736fc30bf7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"LTPForwardAck.class\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+       "socketiolink", "LTPForwardAck.class"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+    "socketiolink", "LTPForwardAck.class"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->322866450,ExpressionUUID->"0547696f-1587-2e4e-9778-5ffc18555647"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"LTPForwardListener.class\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+       "socketiolink", "LTPForwardListener.class"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+    "socketiolink", "LTPForwardListener.class"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->489813874,ExpressionUUID->"071afe12-c523-f841-9ea3-1b3d7a915b00"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"package-info.class\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+       "socketiolink", "package-info.class"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "classes", "kirillbelov", 
+    "socketiolink", "package-info.class"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->56363912,ExpressionUUID->"0a7991e1-e134-7647-b63b-66154ebab56c"]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"generated-sources\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "generated-sources"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"41431e15-fa56-8640-9f95-238e2b1caf43"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->219113268,ExpressionUUID->"c9bdb652-0f29-a84a-979f-36559a1f5f94"],
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"generated-test-sources\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "generated-test-sources"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"b263f3e8-3099-9849-b2d7-6ed38283c140"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->638401700,ExpressionUUID->"cf75e086-914e-b544-b085-69647c5db54e"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"maven-archiver\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-archiver"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"7ddf6baf-55c0-0942-8951-d41a71232eda"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->101576064,ExpressionUUID->"4cf9a421-8b1f-8b48-88a8-2dd510d23650"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"pom.properties\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "maven-archiver", 
+       "pom.properties"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[2]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-archiver", "pom.properties"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->85292745,ExpressionUUID->"365f552d-860f-3643-8473-87f46acd1e56"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"maven-status\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"757010c2-5cfa-2545-a201-55239cc8ff6f"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->277565148,ExpressionUUID->"db6b5a0f-a762-0d42-8a5f-c4a8705f22ba"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"maven-compiler-plugin\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[2]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"b0409bf6-aaa7-5e49-a77b-6f20ffbdcbf7"]], \
+"FileManagerDirectory",
+ CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->201523545,ExpressionUUID->"478a1b71-be5a-a54c-be03-b2905f4bfae5"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"compile\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[3]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "compile"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"95ded8d6-6c3a-cb45-921a-61c7e8b32a8b"]], \
+"FileManagerDirectory",
+ CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 130},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->240647603,ExpressionUUID->"09ec09ae-ca0d-ce48-8e44-a4e58c96afa5"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"default-compile\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "compile", "default-compile"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"0b037bf7-7b4c-aa49-93a5-72e4681758a1"]], \
+"FileManagerDirectory",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->150089428,ExpressionUUID->"89dae2b7-dadf-e847-bc67-d6b65caf0bee"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"createdFiles.lst\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "maven-status", 
+       "maven-compiler-plugin", "compile", "default-compile", 
+       "createdFiles.lst"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[5]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "compile", "default-compile", 
+    "createdFiles.lst"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{115 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 150},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->187690833,ExpressionUUID->"150cdad6-d8c0-244b-ad0a-2ee2b07a53c1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"inputFiles.lst\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "maven-status", 
+       "maven-compiler-plugin", "compile", "default-compile", 
+       "inputFiles.lst"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[5]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "compile", "default-compile", "inputFiles.lst"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{115 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 150},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->528631380,ExpressionUUID->"eed64b6e-2c81-6e4b-9ecd-7b2eef653659"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"testCompile\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[3]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "testCompile"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"1e329012-aa6b-ed44-b874-9322e8a9b7d3"]], \
+"FileManagerDirectory",
+ CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 130},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->45793054,ExpressionUUID->"55299d29-2fd8-2345-818c-600c363a31c3"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"default-testCompile\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "testCompile", "default-testCompile"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"928c0e57-e3bc-8249-85da-1a007f5b2689"]], \
+"FileManagerDirectory",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->181126886,ExpressionUUID->"25cacdc6-cc9f-d241-84f4-0d7c35228d6a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"createdFiles.lst\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "maven-status", 
+       "maven-compiler-plugin", "testCompile", "default-testCompile", 
+       "createdFiles.lst"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[5]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "testCompile", "default-testCompile", 
+    "createdFiles.lst"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{115 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 150},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->13560705,ExpressionUUID->"b8c8d100-ca3f-6e4a-ab64-410b9c23178a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"inputFiles.lst\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaOutput", "maven-status", 
+       "maven-compiler-plugin", "testCompile", "default-testCompile", 
+       "inputFiles.lst"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[5]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "maven-status", 
+    "maven-compiler-plugin", "testCompile", "default-testCompile", 
+    "inputFiles.lst"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{115 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 150},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->14304504,ExpressionUUID->"2bd76a77-4b88-5b4b-a953-41edc7a33966"]
+}, Closed]]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"test-classes\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaOutput", "test-classes"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"9e8a6642-4eee-a540-be2d-d38e0207c6af"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->40152312,ExpressionUUID->"348859b8-2693-6c47-9e82-6a3ae55e6c99"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"javaSource\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"da0c1e0c-67fa-2b43-adcc-21e33709ccff"]], \
+"FileManagerDirectory",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->104060714,ExpressionUUID->"92be8977-b248-ba4d-a20c-0c178bda08f5"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"main\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "main"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"52dd7b58-0f60-6b4e-890d-1db351194cab"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->111029120,ExpressionUUID->"88f05916-30f8-3f49-b9d6-16445656b5d9"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"kirillbelov\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[2]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "main", "kirillbelov"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"cc7625cf-9cd3-4549-96b4-e69c184e88d9"]], \
+"FileManagerDirectory",
+ CellMargins->{{46 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 120},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->333610730,ExpressionUUID->"1f6f1ffc-146d-e44c-9e5a-41c9d6497959"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"socketiolink\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[3]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "main", "kirillbelov", "socketiolink"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"76e0650d-c4a9-5b44-9be8-4d5351805db2"]], \
+"FileManagerDirectory",
+ CellMargins->{{69 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 130},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->31890727,ExpressionUUID->"7704dd59-796f-c445-90e9-46ded3cc2c60"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"LTPForwardAck.java\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaSource", "main", "kirillbelov", 
+       "socketiolink", "LTPForwardAck.java"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "main", "kirillbelov", "socketiolink", 
+    "LTPForwardAck.java"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->670022092,ExpressionUUID->"bffe0549-6028-8d46-bbcc-abc7fc8698ab"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"LTPForwardListener.java\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaSource", "main", "kirillbelov", 
+       "socketiolink", "LTPForwardListener.java"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "main", "kirillbelov", "socketiolink", 
+    "LTPForwardListener.java"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->245452993,ExpressionUUID->"eae7576d-ab11-5a45-a0d6-b763eafa1ad6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"package-info.java\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "javaSource", "main", "kirillbelov", 
+       "socketiolink", "package-info.java"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[4]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "main", "kirillbelov", "socketiolink", 
+    "package-info.java"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{92 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 140},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->21050877,ExpressionUUID->"0a8fa390-3598-2c46-937a-aa4411fc8039"]
+}, Closed]]
+}, Closed]]
+}, Closed]],
+
+Cell[TextData[Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   ActionMenuBox["\<\"test\"\>",{
+    "\"Open/Close Group\"" :> (
+      SelectionMove[ParentCell[EvaluationCell[]], All, Cell]; 
+      FrontEndTokenExecute[EvaluationNotebook[], "OpenCloseGroup"]), 
+     "\"Open Directory\"" :> 
+     DefinitionNotebookClient`FileTreeOpen[ParentCell[EvaluationCell[]]], 
+     "\"Un/Mark as Excluded\"" :> 
+     DefinitionNotebookClient`FileTreeExclusionToggle[
+      ParentCell[EvaluationCell[]]], "\"Copy Path to Clipboard\"" :> 
+     DefinitionNotebookClient`FileTreeCopy[ParentCell[EvaluationCell[]]]},
+    Appearance->None,
+    BaseStyle->{"Text"}],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[1]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "javaSource", "test"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{
+   "Text"}]],ExpressionUUID->"e16b33aa-c8d3-644e-ac5f-2f37bd480391"]], \
+"FileManagerDirectory",
+ CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerEmptyDirectoryIconTemplate"]], Background -> 
+     None], Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->353964771,ExpressionUUID->"e2c2e1a5-55a6-6448-8387-bfcb498c6acd"]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -90,17 +1288,18 @@ Cell[TextData[Cell[BoxData[
     NotebookDirectory[], "Kernel"}],
   BoxID -> "FileTreePath",
   BaseStyle->{
-   "Text"}]],ExpressionUUID->"0f5bc58e-ed8c-7f43-991f-a3ca7ec9c6f2"]], \
+   "Text"}]],ExpressionUUID->"ee6dc320-824c-b544-8300-d9f9fc536893"]], \
 "FileManagerDirectory",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerKernelIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->308761030,ExpressionUUID->"62318218-b1f6-d94b-b7ca-97903d56503d"],
+ CellID->308761030,ExpressionUUID->"1c530041-e367-8249-a9e4-b97730c71725"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -117,14 +1316,39 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{23 + Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 110},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerWLIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->131086249,ExpressionUUID->"33cd1a58-865e-2149-881f-25067dfd1b93"]
+ CellID->131086249,ExpressionUUID->"4c3ec936-8ab6-8d49-bacf-07c281acf22c"]
 }, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"LICENSE\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "LICENSE"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "LICENSE"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerUnknownIconTemplate"]], Background -> None],
+     Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->145960226,ExpressionUUID->"7a0bfc9b-aab0-9540-bb7d-f28d30f6ef77"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -141,13 +1365,62 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerPacletInfoIconTemplate"]], Background -> 
      None], Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->4460863,ExpressionUUID->"5e29fb0c-c586-574f-9947-fbd74e40cb4c"],
+ CellID->4460863,ExpressionUUID->"eb261581-761a-1644-a4f9-e0990958df56"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"pom.xml\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "pom.xml"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "pom.xml"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerXMLIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->81045291,ExpressionUUID->"d3b37555-3068-6749-9767-90d84bb59121"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"README.md\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "README.md"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "README.md"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerTXTIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->268941349,ExpressionUUID->"9d27ee06-ddc4-9442-9c6e-7592b4db01d1"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -164,18 +1437,44 @@ Cell[BoxData[
   BaseStyle->{"Text"}]], "FileManagerFile",
  CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellFrameLabels->{{
     Cell[
      BoxData[
       TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
     Inherited}, {Inherited, Inherited}},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->94117259,ExpressionUUID->"d049fe23-8b02-8946-8df0-549dd10eb57a"],
+ CellID->94117259,ExpressionUUID->"43816c0c-b6d6-9046-a6e3-60564e020673"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   TemplateBox[{"\"SocketIOLink.nb\"", 
+     FileNameJoin[{
+       NotebookDirectory[], "SocketIOLink.nb"}]},
+    "FileManagerFileOpenerTemplate"],
+   Annotation[#, 
+    DefinitionNotebookClient`TemplateCells`PackagePrivate`fileDepth[0]]& ],
+  FileNameJoin[{
+    NotebookDirectory[], "SocketIOLink.nb"}],
+  BoxID -> "FileTreePath",
+  BaseStyle->{"Text"}]], "FileManagerFile",
+ CellMargins->{{Inherited, Inherited}, {Inherited, Inherited}},
+ CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{}, "FileManagerNBIconTemplate"]], Background -> None], 
+    Inherited}, {Inherited, Inherited}},
+ CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
+ CellID->22583156,ExpressionUUID->"48467045-c7b5-0245-95eb-2c260e887dcd"],
 
 Cell["", "FileManagerBottomSpacer",
  CellGroupingRules->{"SectionGrouping", 100},
+ TaggingRules->{},
  CellTags->{"FileManagerCell", "FileManager-PacletFiles"},
- CellID->480768010,ExpressionUUID->"7b727992-8947-7c42-bbb2-52c49314ebd3"]
+ CellID->480768010,ExpressionUUID->"70e8d8ab-c3f5-bf41-95cc-2c1443769723"]
 }, Open  ]]
 }, Open  ]],
 
@@ -311,6 +1610,7 @@ display\\non the landing page for your paclet.\"\>",
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->445097320,ExpressionUUID->"6a9df4e1-9bcb-ce41-83bd-d20059d319da"]
 }, Open  ]],
@@ -347,6 +1647,7 @@ text that users will see when visiting the main landing page of your paclet.",
  CellID->433339604,ExpressionUUID->"13d7ff42-aef9-194a-888f-577d1d45d425"],
 
 Cell["A paragraph that describes your paclet in more detail.", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->441612482,ExpressionUUID->"827ebefc-0d14-5a45-be48-8d840ab11480"]
 }, Open  ]],
@@ -385,6 +1686,7 @@ examples on the webpage for the resource.", "MoreInfoText"], Background ->
  CellID->484110581,ExpressionUUID->"7073dadf-50ee-334e-ac57-8f30db17eb70"],
 
 Cell["Additional information about the paclet.", "Notes",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->889292814,ExpressionUUID->"32e69197-18e9-f747-a0aa-60c6f250108a"]
 }, Open  ]],
@@ -456,6 +1758,7 @@ for your paclet."}], "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->945361513,ExpressionUUID->"35b926d8-235a-d547-8263-c27acbe96001"],
 
 Cell["KirillBelov`SocketIOLink`", "Text",
+ TaggingRules->{},
  CellID->16686779,ExpressionUUID->"54edfef5-e6c7-8c43-8149-591d08d953b7"]
 }, Open  ]],
 
@@ -587,6 +1890,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"PacletDirectoryLoad", "[", 
    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input", "Excluded",
+ TaggingRules->{},
  InitializationCell->True,
  CellID->996717066,ExpressionUUID->"92260460-194c-9d4c-a7f2-587158901993"],
 
@@ -594,6 +1898,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"Needs", "[", "\"\<KirillBelov`SocketIOLink`\>\"", "]"}], 
   ";"}]], "Input", "Excluded",
+ TaggingRules->{},
  InitializationCell->True,
  CellID->172764492,ExpressionUUID->"d2b2b3d8-3b06-d944-a0c5-c3cf4fcbaad2"]
 }, Open  ]],
@@ -601,9 +1906,11 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellID->462042388,ExpressionUUID->"4284b6c2-6ac7-e148-924e-58e8ba329d8f"],
 
 Cell["Show a few simple examples of common uses of the paclet:", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->319073343,ExpressionUUID->"2e634d04-acf8-3447-a8ed-53db784ee9b3"],
 
@@ -616,6 +1923,7 @@ Cell[BoxData[
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[1]:=",
  CellID->593829399,ExpressionUUID->"54c7c8f9-0812-5242-b3ce-375a3e1a05b0"],
@@ -628,6 +1936,7 @@ Cell[BoxData[
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[1]=",
  CellID->197444189,ExpressionUUID->"c8046c59-db82-544b-85a9-048d5a1bcb40"]
@@ -637,11 +1946,13 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellID->964056545,ExpressionUUID->"f8e877a3-b1e7-1a4e-bdc0-3563551d1fb4"],
 
 Cell["\<\
 Give more examples showing the range of features in the paclet:\
 \>", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->217390316,ExpressionUUID->"86ad22d3-56b4-7044-a482-d11efd39cc4e"],
 
@@ -658,6 +1969,7 @@ Cell[BoxData[
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[1]:=",
  CellID->978490832,ExpressionUUID->"0f6cdc3b-ace1-8a41-a6b6-1f44142d64e9"],
@@ -767,6 +2079,7 @@ ZbGOM9gko9PnRxaZtFz7FKPzTxKLZm6cvGXAtb+bxur28ZzAsRORzuJfVG0R
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[1]=",
  CellID->980074188,ExpressionUUID->"0623501f-4146-864d-ab9f-87e18eb37bb4"]
@@ -783,6 +2096,7 @@ Cell[BoxData[
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "ExampleDelimiter",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->717218889,ExpressionUUID->"90bc1888-ab39-e14f-bf22-89411678a666"],
 
@@ -790,6 +2104,7 @@ Cell["\<\
 Use screenshots to show features like notebook styles, palettes and external \
 operations:\
 \>", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->287792797,ExpressionUUID->"669cbc81-d77e-7a48-bf47-108f7d55d0f4"],
 
@@ -799,6 +2114,7 @@ Cell[BoxData[
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[1]:=",
  CellID->794331063,ExpressionUUID->"41dd9ecb-feaf-804e-b56a-c301d4068a0e"],
@@ -3423,6 +4739,7 @@ ROP9SJIkSZIkSZIkScL/B0gdhSo=
   #& ,
   TaggingRules -> {"DefaultContentBoxes" -> True},
   AutoDelete->True]], "ExampleImage",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->244557913,ExpressionUUID->"13a5f3d0-8a13-2743-992f-0179372c4d06"]
 }, Open  ]]
@@ -3471,6 +4788,7 @@ publicly credited with contributing this paclet.", "MoreInfoText"],
  CellID->57534933,ExpressionUUID->"c6dd2d14-a8e3-444a-b647-3a4ec2e86fcf"],
 
 Cell["Kirill Belov", "Text",
+ TaggingRules->{},
  CellID->46224994,ExpressionUUID->"5a79a838-68df-534a-8825-88b33ee5bb7d"]
 }, Open  ]],
 
@@ -3506,15 +4824,9 @@ GitHub), you can provide the URL here.", "MoreInfoText"], Background ->
   "Source Control Repository", "SourceControlURL", "TemplateCellGroup"},
  CellID->221376991,ExpressionUUID->"eef9791f-422a-a144-bd0d-581e5104bf63"],
 
-Cell["https://github.com/UserName/MyPaclet", "Text",
- CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
-       SelectedNotebook[], After, Cell]; NotebookFind[
-       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
-       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
-       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
-   PassEventsDown -> False, PassEventsUp -> False},
- CellTags->{"DefaultContent", "TabNext"},
- CellID->75689085,ExpressionUUID->"2317b7eb-473d-9747-8488-e20c5c87c7f2"]
+Cell["https://github.com/KirillBelovTest/SocketIOLink", "Text",
+ TaggingRules->{},
+ CellID->34333481,ExpressionUUID->"e5879cbc-ce46-cd41-b119-028d5303b45a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3736,6 +5048,7 @@ concepts) that should be used to include the paclet in search results.",
  CellID->913860664,ExpressionUUID->"400bfccf-f0d5-a043-a7d5-1cbf20df5743"],
 
 Cell["keyword 1", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -4021,6 +5334,7 @@ repository that are related to this paclet.", "MoreInfoText"], Background ->
  CellID->280622473,ExpressionUUID->"65c36e1e-08b6-b44b-be05-b8c7e9162adf"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -4065,6 +5379,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->687116677,ExpressionUUID->"3615fcdd-2406-4847-a458-da20d1161441"],
 
 Cell["Source, reference or citation", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -4106,6 +5421,7 @@ to the paclet.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->179193585,ExpressionUUID->"b7e4f65a-d788-904a-9f78-612597ce93c1"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -4183,6 +5499,7 @@ Cell[TextData[{
  CellID->267876551,ExpressionUUID->"39b09aea-1054-2944-8e7a-8f89a23e86dd"],
 
 Cell["14.2+", "Text",
+ TaggingRules->{},
  CellID->492850787,ExpressionUUID->"cc3fe16f-7b7f-8e4b-b8c8-bb2c089101b3"]
 }, Open  ]],
 
@@ -4955,8 +6272,7 @@ modifications\n\[FilledSmallSquare] Internal handlers"}], "MoreInfoText"],
                    FrameStyle -> GrayLevel[0.9], RoundingRadius -> 5, 
                    ImageSize -> {
                     Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> 
-                 True, 
-                 CellTags -> {
+                 True, CellTags -> {
                   "SectionMoreInfoDisclosuresWLSystemConfiguration"}, 
                  CellMargins -> {{66, 66}, {15, 15}}], 
                 HoldComplete[
@@ -5414,6 +6730,7 @@ that are otherwise beyond the scope of the paclet documentation.",
  CellID->951557313,ExpressionUUID->"52532b83-853c-5c4b-ad56-2c5f2537f890"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -5425,9 +6742,24 @@ Cell["Additional information about limitations, issues, etc.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{786, Automatic},
-WindowMargins->{{561, Automatic}, {Automatic, 172.5}},
+WindowSize->{938.25, 736.5},
+WindowMargins->{{Automatic, 231.75}, {Automatic, 86.25}},
 WindowTitle->"SocketIOLink | Definition Notebook",
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.33333, 0.33333, 0.33333], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]},
 TaggingRules->{
  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "2023.03.03", "CreationTimestamp" -> 
@@ -5468,7 +6800,24 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
     "Paclet", "PacletName" -> "PacletResource", "SourceID" -> 
     "8f99c2b0ee5e9f24d331c183562e905b4bbb1a6f"}, "ToolsOpen" -> True, 
-  "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}},
+  "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+  "AutoUpdate" -> True, 
+  "PacletBuildData" -> {
+   "LastBuiltArchive" -> 
+    "C:\\Users\\Kirill\\Projects\\SocketIOLink\\build\\KirillBelov__\
+SocketIOLink-1.0.0.paclet", "FileHashes" -> ByteArray[CompressedData["
+1:eJwB3AEj/iFib1JiAQAAAM8BAAA4Qzp4nHMU0A1Wc8lPLs1NzStJLMnMz9N3
+zUvPySzO0PfMS0mt0C9OTQdJFccbOjLpBrMF55cWJacWs/jl56UCuSGJRemp
+JT5zpBrLn/k8NdQN1iDGLL301Dw8prF+mPFogeSzEt1gbeymBRek5uSQ4LyN
+d9Z3X5PjASrQJdpAot0o75VYlqifmpeemZeql5mvm5yTCdSva6RnqGegl5VY
+hGSIz60X7xoCw1eXI8xBiIiBzckqzs/TNTIwsDQwMjRE1y6tpWUXxNxaiNCO
+EBECa/cJCdAF2Yth83onRcb5xVtqEVoRIuJgrfnZGSUlBbrGeoZGIISm3/Fd
+6BHVRSJaCP0IERGofqDnDfUMTTEt/6my+IaMzCs9hGaECCT4ivOTs1NL0IIP
+w/+5srUeCxcxIPkfISINNicYbI6nv09mXjb2gJD8I5FiVNzviTADISLmnVqU
+l5qDYopeeQ6KdpfouWH5LUgxiBBh9/F0dvULdkVW/zZ1t9Y9xo/6CPUIEd6A
+xOQcoD15aflotuiI9TdOCvnghtCFEBGE6PJNzMtMSy0uQdWJnkyvhBp3n7C8
+AvQbZ5Cro4uvq15uCrJFz3LzFY5/ruZF6ICJAACYsm92dYPnVQ==
+      "]]}},
 CreateCellID->True,
 DynamicEvaluationTimeout->60,
 FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
@@ -6527,6 +7876,7 @@ AsyncronousResourceInformationUpdates = False,
              FrameBox[
               ButtonBox[
                StyleBox[
+                
                 TemplateBox[{
                  "\"Documentation Tools\"", 
                   "\"\[ThinSpace]\[ThinSpace]\[ThinSpace]\[FilledDownTriangle]\
@@ -7501,7 +8851,6 @@ p2HmwdTp4FCHTvOhqYfZrw2lhdDk0fno6tHcD1PPwOSAnY+uns8BAE8cGz4=
                     FaceForm[
                     RGBColor[1., 1., 1.]]}, StripOnInput -> False], 
                     StyleBox[{
-                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
                      0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
                     0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1,
@@ -12081,7 +13430,6 @@ directory.\""}, "PacletDirectoryChooserErrorTemplate"]], "AttachedMessage"],
                     RGBColor[0.98039, 0.98039, 0.98039, 1.]]}, StripOnInput -> 
                     False], 
                     StyleBox[{
-                    
                     JoinedCurveBox[{{{0, 2, 0}}}, {{{12.383, 16.953}, {20.16, 
                     16.953}}}, CurveClosed -> {0}]}, {
                     JoinForm[{"Miter", 10.}], 
@@ -12313,8 +13661,8 @@ AsyncronousResourceInformationUpdates = False,
                     DefinitionNotebookClient`$ButtonCodeID = 
                     341138948110023950; 
                     DefinitionNotebookClient`CheckForUpdates[RSNB`nb$, 
-                    ReleaseHold[DefinitionNotebookClient`$ButtonCode = 
-                    HoldForm[
+                    ReleaseHold[
+                    DefinitionNotebookClient`$ButtonCode = HoldForm[
                     
                     PacletResource`DefinitionNotebook`\
 RefreshNotebookPacletFiles[RSNB`nbo, RSNB`cell]]]], 
@@ -12649,7 +13997,6 @@ directory.\""}, "PacletDirectoryChooserErrorTemplate"]], "AttachedMessage"],
                     RGBColor[0.98039, 0.98039, 0.98039, 1.]]}, StripOnInput -> 
                     False], 
                     StyleBox[{
-                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                     0}}}, {{{4.609, 28.617}, {27.937, 28.617}, {27.937, 
                     5.289}, {4.609, 5.289}, {4.609, 28.617}}}]}, {
@@ -13131,9 +14478,9 @@ GRPf1sw3cDj8VSOm/5G9w5vAHXKt3IZQ/0HDoQHBFwFFwBcEHxR9zQlGcP3o
               0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{12.5, 
               8.5146}, {12.5, 13.234}, {16.5, 14.912}, {16.5, 10.193}}, {{7.5,
                14.912}, {11.5, 13.234}, {11.5, 8.5146}, {7.5, 10.193}}, {{
-              15.708, 15.664}, {12., 14.109}, {8.292, 15.664}, {12., 17.221}},
-               {{12., 18.305}, {6.5, 15.996}, {6.5, 9.5286}, {12., 7.2206}, {
-              17.5, 9.5286}, {17.5, 15.996}}}]}}, {
+              15.708, 15.664}, {12., 14.109}, {8.292, 15.664}, {12., 
+              17.221}}, {{12., 18.305}, {6.5, 15.996}, {6.5, 9.5286}, {12., 
+              7.2206}, {17.5, 9.5286}, {17.5, 15.996}}}]}}, {
           ImageSize -> 12, AspectRatio -> Automatic, ImageSize -> {24., 24.}, 
            PlotRange -> {{0., 24.}, {0., 24.}}}]}, 
         Alignment -> {Right, Bottom}]& )}], 

@@ -163,7 +163,7 @@ Block[{send, javaIOSocket = socketObj["JavaIOSocket"]},
 
 
 handlerFunc[data_] := 
-Echo[data]; 
+data; 
 
 
 toJavaJSON[assoc_?AssociationQ] := 
