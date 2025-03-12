@@ -15,15 +15,11 @@ SocketIOConnect[url, headers] connecting using specific extra HTTP headers.";
 
 
 SocketIOListen::usage = 
-"SocketIOListen[conn, event] listen specific event type."; 
+"SocketIOListen[conn, listener, event] listen specific event type."; 
 
 
 SocketIOEmit::usage = 
-"SocketIOEmit[conn, event, obj] emit obj with specific event type."; 
-
-
-SocketIOSend::usage =
-"SocketIOSend[conn, obj] send obj with event type 'message'.";
+"SocketIOEmit[conn, ack, event, obj] emit obj with specific event type."; 
 
 
 SocketIOObject::usage = 
@@ -37,6 +33,9 @@ CreateType[SocketIOObject, {
     "Endpoint", 
     "HTTPHeaders", 
     "Handler", 
+
+    "EventHandlers",
+    "AckHandlers",
     
     "ListenPort", 
     "ListenSocket", 
@@ -44,8 +43,8 @@ CreateType[SocketIOObject, {
     "Listener", 
 
     "JavaIOSocket", 
-    "JavaIOListener", 
-    "JavaIOAck", 
+    "JavaIOListeners", 
+    "JavaIOAcks", 
     "JavaLTPClient"
 }]; 
 
@@ -72,8 +71,6 @@ With[{
         javaIOSocket, 
         javaIOOptions, 
         javaIOHeaders, 
-        javaIOListener, 
-        javaIOAck, 
         javaLTPClient, 
         
         connect, 
@@ -84,6 +81,9 @@ With[{
         socketObj["Endpoint"] = endpoint; 
         socketObj["HTTPHeaders"] = httpHeaders; 
         socketObj["Handler"] = handler; 
+
+        socketObj["EventHandlers"] = <||>;
+        socketObj["AckHandlers"] = <||>;
 
         socketObj["ListenPort"] = listenPort; 
 
@@ -98,8 +98,8 @@ With[{
         listenHandler["Handler", "LTP"] = LTPPacketQ -> ltpHandler; 
 
         ltpHandler["Responsible"] = False; 
-        ltpHandler["Deserializer"] = ByteArrayToString; 
-        ltpHandler["Handler"] := socketObj["Handler"]; 
+        ltpHandler["Deserializer"] = ImportByteArray[#, "RawJSON"]&; 
+        ltpHandler["Handler"] := socketObj["Handler"][socketObj, #]&; 
 
         IOClass; 
 
@@ -128,11 +128,9 @@ With[{
         javaLTPClient = JavaNew[LTPClientClass, listenPort]; 
         socketObj["JavaLTPClient"] = javaLTPClient; 
 
-        javaIOListener = JavaNew[LTPForwardListenerClass, javaLTPClient]; 
-        socketObj["JavaIOListener"] = javaIOListener; 
+        socketObj["JavaIOListeners"] = <||>; 
 
-        javaIOAck = JavaNew[LTPForwardAckClass, javaLTPClient]; 
-        socketObj["JavaIOAck"] = javaIOAck; 
+        socketObj["JavaIOAcks"] = <||>; 
 
         (*Return*)
         socketObj
@@ -140,30 +138,60 @@ With[{
 ]; 
 
 
-SocketIOListen[socketObj_SocketIOObject, eventName_String] := 
+SocketIOListen[socketObj_SocketIOObject, eventName_String, eventHandler_: Echo] := 
 Block[{
     on, 
-    javaIOSocket = socketObj["JavaIOSocket"], 
-    javaIOListener = socketObj["JavaIOListener"]
+    javaIOListener, 
+    javaLTPClient = socketObj["JavaLTPClient"],
+    javaIOSocket = socketObj["JavaIOSocket"]
 }, 
-    javaIOSocket@on[eventName, javaIOListener]
+    socketObj["EventHandlers", eventName] = eventHandler;
+
+    If[!KeyExistsQ[socketObj["JavaIOListeners"], eventName], 
+        javaIOListener = JavaNew[LTPForwardListenerClass, eventName, javaLTPClient];
+        socketObj["JavaIOListeners", eventName] = javaIOListener;
+        javaIOSocket@on[eventName, javaIOListener]
+    ];
 ]; 
 
 
-SocketIOEmit[socketObj_SocketIOObject, eventName_String, assoc_?AssociationQ] := 
-Block[{emit, javaIOSocket = socketObj["JavaIOSocket"], javaIOAck = socketObj["JavaIOAck"]}, 
-    javaIOSocket@emit[eventName, MakeJavaObject[{toJavaJSON[assoc]}], javaIOAck]
+SocketIOEmit[socketObj_SocketIOObject, eventName_String, assoc_?AssociationQ, ackHandler_: Echo] := 
+Block[{
+    emit, javaIOAck, 
+    javaIOSocket = socketObj["JavaIOSocket"], 
+    javaLTPClient = socketObj["JavaLTPClient"], 
+    obj = MakeJavaObject[{toJavaJSON[assoc]}]
+}, 
+    socketObj["AckHandlers", eventName] = ackHandler;
+    
+    If[!KeyExistsQ[socketObj["JavaIOAcks"], eventName],
+        javaIOAck = JavaNew[LTPForwardAckClass, eventName, javaLTPClient];
+        socketObj["JavaIOAcks", eventName] = javaIOAck, 
+    (*Else*)
+        javaIOAck = socketObj["JavaIOAcks", eventName]
+    ]; 
+    
+    javaIOSocket@emit[eventName, obj, javaIOAck]
 ]; 
 
 
-SocketIOSend[socketObj_SocketIOObject, assoc_?AssociationQ] := 
-Block[{send, javaIOSocket = socketObj["JavaIOSocket"]}, 
-    javaIOSocket@send[MakeJavaObject[{toJavaJSON[assoc]}]]
+SocketIOObject::errevnt = 
+"Unknown event type: `1`";
+
+
+handlerFunc[socketObj_SocketIOObject, data_] := 
+With[{
+    eventName = data["name"], 
+    eventType = data["type"],
+    ackHandlers = socketObj["AckHandlers"], 
+    eventHandlers = socketObj["EventHandlers"]
+},  
+    Which[
+        eventType === "ack" && KeyExistsQ[ackHandlers, eventName], ackHandlers[eventName][data], 
+        eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][data], 
+        Else, Message[SocketIOObject::errevnt, data]
+    ]
 ]; 
-
-
-handlerFunc[data_] := 
-data; 
 
 
 toJavaJSON[assoc_?AssociationQ] := 

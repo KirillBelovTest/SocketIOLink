@@ -3,7 +3,7 @@ PacletObject[
     "Name" -> "KirillBelov/SocketIOLink",
     "Description" -> "SocketIO Link",
     "Creator" -> "Kirill Belov",
-    "Version" -> "1.0.0",
+    "Version" -> "1.0.1",
     "WolframVersion" -> "14.2+",
     "PublisherID" -> "KirillBelov",
     "License" -> "MIT",
