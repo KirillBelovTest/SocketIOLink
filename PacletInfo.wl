@@ -1,9 +1,11 @@
+(* ::Package:: *)
+
 PacletObject[
   <|
     "Name" -> "KirillBelov/SocketIOLink",
     "Description" -> "SocketIO Link",
     "Creator" -> "Kirill Belov",
-    "Version" -> "1.0.1",
+    "Version" -> "1.0.2",
     "WolframVersion" -> "14.2+",
     "PublisherID" -> "KirillBelov",
     "License" -> "MIT",
@@ -25,6 +27,7 @@ PacletObject[
         "Assets" -> {
           {"License", "./LICENSE"},
           {"ReadMe", "./README.md"},
+          {"Images", "./Images"},
           {"Java", "./Java"}
         }
       }

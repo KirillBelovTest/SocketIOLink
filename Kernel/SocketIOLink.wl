@@ -10,7 +10,7 @@ BeginPackage["KirillBelov`SocketIOLink`", {
 
 
 SocketIOConnect::usage = 
-"SocketIOConnect[url] connecting to the specific endpoint and returns IOSocketObject.
+"SocketIOConnect[url] connecting to the specific endpoint and returns SocketIOConnection.
 SocketIOConnect[url, headers] connecting using specific extra HTTP headers."; 
 
 
@@ -22,14 +22,17 @@ SocketIOEmit::usage =
 "SocketIOEmit[conn, ack, event, obj] emit obj with specific event type."; 
 
 
-SocketIOObject::usage = 
-"SocketIOObject[] representation of SocketIO connection."; 
+SocketIOConnection::usage = 
+"SocketIOConnection[] representation of SocketIO connection."; 
 
 
 Begin["`Private`"]; 
 
 
-CreateType[SocketIOObject, {
+CreateType[SocketIOConnection, {
+    "Icon" -> $connectionIcon, 
+    "PublicFields" -> {"Endpoint"}, 
+
     "Endpoint", 
     "HTTPHeaders", 
     "Handler", 
@@ -57,7 +60,7 @@ Options[SocketIOConnect] = {
 
 SocketIOConnect[endpoint_String, OptionsPattern[]] := 
 With[{
-    socketObj = SocketIOObject[], 
+    connection = SocketIOConnection[], 
     listenHandler = CSocketHandler[], 
     ltpHandler = LTPHandler[]
 }, 
@@ -78,28 +81,28 @@ With[{
         add, 
         put
     }, 
-        socketObj["Endpoint"] = endpoint; 
-        socketObj["HTTPHeaders"] = httpHeaders; 
-        socketObj["Handler"] = handler; 
+        connection["Endpoint"] = endpoint; 
+        connection["HTTPHeaders"] = httpHeaders; 
+        connection["Handler"] = handler; 
 
-        socketObj["EventHandlers"] = <||>;
-        socketObj["AckHandlers"] = <||>;
+        connection["EventHandlers"] = <||>;
+        connection["AckHandlers"] = <||>;
 
-        socketObj["ListenPort"] = listenPort; 
+        connection["ListenPort"] = listenPort; 
 
         listenSocket = CSocketOpen[listenPort]; 
-        socketObj["ListenSocket"] = listenSocket; 
+        connection["ListenSocket"] = listenSocket; 
 
         listener = SocketListen[listenSocket, listenHandler]; 
-        socketObj["Listener"] = listener; 
-        socketObj["ListenHandler"] = listenHandler; 
+        connection["Listener"] = listener; 
+        connection["ListenHandler"] = listenHandler; 
 
         listenHandler["Accumulator", "LTP"] = LTPPacketQ -> LTPPacketLength; 
         listenHandler["Handler", "LTP"] = LTPPacketQ -> ltpHandler; 
 
         ltpHandler["Responsible"] = False; 
         ltpHandler["Deserializer"] = ImportByteArray[#, "RawJSON"]&; 
-        ltpHandler["Handler"] := socketObj["Handler"][socketObj, #]&; 
+        ltpHandler["Handler"] := connection["Handler"][connection, #]&; 
 
         IOClass; 
 
@@ -121,75 +124,76 @@ With[{
 
         javaIOSocket = io`socket`client`IO`socket[endpoint, javaIOOptions]; 
         
-        socketObj["JavaIOSocket"] = javaIOSocket; 
+        connection["JavaIOSocket"] = javaIOSocket; 
 
         javaIOSocket@connect[]; 
 
         javaLTPClient = JavaNew[LTPClientClass, listenPort]; 
-        socketObj["JavaLTPClient"] = javaLTPClient; 
+        connection["JavaLTPClient"] = javaLTPClient; 
 
-        socketObj["JavaIOListeners"] = <||>; 
+        connection["JavaIOListeners"] = <||>; 
 
-        socketObj["JavaIOAcks"] = <||>; 
+        connection["JavaIOAcks"] = <||>; 
 
         (*Return*)
-        socketObj
+        connection
     ]
 ]; 
 
 
-SocketIOListen[socketObj_SocketIOObject, eventName_String, eventHandler_: Echo] := 
+SocketIOListen[connection_SocketIOConnection, eventName_String, eventHandler_: Identity] := 
 Block[{
     on, 
     javaIOListener, 
-    javaLTPClient = socketObj["JavaLTPClient"],
-    javaIOSocket = socketObj["JavaIOSocket"]
+    javaLTPClient = connection["JavaLTPClient"],
+    javaIOSocket = connection["JavaIOSocket"]
 }, 
-    socketObj["EventHandlers", eventName] = eventHandler;
+    connection["EventHandlers", eventName] = eventHandler;
 
-    If[!KeyExistsQ[socketObj["JavaIOListeners"], eventName], 
+    If[!KeyExistsQ[connection["JavaIOListeners"], eventName], 
         javaIOListener = JavaNew[LTPForwardListenerClass, eventName, javaLTPClient];
-        socketObj["JavaIOListeners", eventName] = javaIOListener;
+        connection["JavaIOListeners", eventName] = javaIOListener;
         javaIOSocket@on[eventName, javaIOListener]
     ];
 ]; 
 
 
-SocketIOEmit[socketObj_SocketIOObject, eventName_String, assoc_?AssociationQ, ackHandler_: Echo] := 
+SocketIOEmit[connection_SocketIOConnection, eventName_String, assoc_?AssociationQ, ackHandler_: Identity] := 
 Block[{
     emit, javaIOAck, 
-    javaIOSocket = socketObj["JavaIOSocket"], 
-    javaLTPClient = socketObj["JavaLTPClient"], 
+    javaIOSocket = connection["JavaIOSocket"], 
+    javaLTPClient = connection["JavaLTPClient"], 
     obj = MakeJavaObject[{toJavaJSON[assoc]}]
 }, 
-    socketObj["AckHandlers", eventName] = ackHandler;
+    connection["AckHandlers", eventName] = ackHandler;
     
-    If[!KeyExistsQ[socketObj["JavaIOAcks"], eventName],
+    If[!KeyExistsQ[connection["JavaIOAcks"], eventName],
         javaIOAck = JavaNew[LTPForwardAckClass, eventName, javaLTPClient];
-        socketObj["JavaIOAcks", eventName] = javaIOAck, 
+        connection["JavaIOAcks", eventName] = javaIOAck, 
     (*Else*)
-        javaIOAck = socketObj["JavaIOAcks", eventName]
+        javaIOAck = connection["JavaIOAcks", eventName]
     ]; 
     
     javaIOSocket@emit[eventName, obj, javaIOAck]
 ]; 
 
 
-SocketIOObject::errevnt = 
+SocketIOConnection::errevnt = 
 "Unknown event type: `1`";
 
 
-handlerFunc[socketObj_SocketIOObject, data_] := 
+handlerFunc[connection_SocketIOConnection, data_?AssociationQ] := 
 With[{
     eventName = data["name"], 
     eventType = data["type"],
-    ackHandlers = socketObj["AckHandlers"], 
-    eventHandlers = socketObj["EventHandlers"]
-},  
+    ackHandlers = connection["AckHandlers"], 
+    eventHandlers = connection["EventHandlers"], 
+    arg = Append[data, "SocketIOConnection" -> connection]
+}, 
     Which[
-        eventType === "ack" && KeyExistsQ[ackHandlers, eventName], ackHandlers[eventName][data], 
-        eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][data], 
-        Else, Message[SocketIOObject::errevnt, data]
+        eventType === "ack" && KeyExistsQ[ackHandlers, eventName], ackHandlers[eventName][arg], 
+        eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][arg], 
+        Else, Message[SocketIOConnection::errevnt, arg]
     ]
 ]; 
 
@@ -238,6 +242,10 @@ LoadJavaClass["java.util.ArrayList"];
 
 $directory = 
 DirectoryName[$InputFileName, 2]; 
+
+
+$connectionIcon = 
+Import[FileNameJoin[{$directory, "Images", "socket-io.png"}]]; 
 
 
 Map[AddToClassPath] @ 
