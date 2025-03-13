@@ -15,11 +15,15 @@ SocketIOConnect[url, headers] connecting using specific extra HTTP headers.";
 
 
 SocketIOListen::usage = 
-"SocketIOListen[conn, listener, event] listen specific event type."; 
+"SocketIOListen[conn, event, handler] listen specific event type."; 
+
+
+SocketIOListenAll::usage = 
+"SocketIOListenAll[conn, handler] listen all events."; 
 
 
 SocketIOEmit::usage = 
-"SocketIOEmit[conn, ack, event, obj] emit obj with specific event type."; 
+"SocketIOEmit[conn, event, data, handler] emit data with specific event type."; 
 
 
 SocketIOConnection::usage = 
@@ -158,6 +162,23 @@ Block[{
 ]; 
 
 
+SocketIOListenAll[connection_SocketIOConnection, eventHandler_: Identity] := 
+Block[{
+    onAnyIncoming, 
+    javaIOListener, 
+    javaLTPClient = connection["JavaLTPClient"],
+    javaIOSocket = connection["JavaIOSocket"]
+}, 
+    connection["EventHandlers", "*"] = eventHandler;
+
+    If[!KeyExistsQ[connection["JavaIOListeners"], "*"], 
+        javaIOListener = JavaNew[LTPForwardListenerClass, "*", javaLTPClient];
+        connection["JavaIOListeners", "*"] = javaIOListener;
+        javaIOSocket@onAnyIncoming[javaIOListener]
+    ];
+];
+
+
 SocketIOEmit[connection_SocketIOConnection, eventName_String, assoc_?AssociationQ, ackHandler_: Identity] := 
 Block[{
     emit, javaIOAck, 
@@ -188,7 +209,7 @@ With[{
     eventType = data["type"],
     ackHandlers = connection["AckHandlers"], 
     eventHandlers = connection["EventHandlers"], 
-    arg = Append[data, "SocketIOConnection" -> connection]
+    arg = Append[data, "connection" -> connection]
 }, 
     Which[
         eventType === "ack" && KeyExistsQ[ackHandlers, eventName], ackHandlers[eventName][arg], 
