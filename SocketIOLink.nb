@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1060,         20]
-NotebookDataLength[     30182,        568]
-NotebookOptionsPosition[     30220,        560]
-NotebookOutlinePosition[     30626,        576]
-CellTagsIndexPosition[     30583,        573]
+NotebookDataLength[     29870,        562]
+NotebookOptionsPosition[     29910,        554]
+NotebookOutlinePosition[     30316,        570]
+CellTagsIndexPosition[     30273,        567]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -65,16 +65,25 @@ Cell[BoxData[{
    RowBox[{"Get", "[", "\"\<KirillBelov`WAEXLink`\>\"", "]"}], ";"}], " "}], "\n", 
  RowBox[{
   RowBox[{
-   RowBox[{"ShowJavaConsole", "[", "]"}], ";"}], " "}], "\n", 
+   RowBox[{"ShowJavaConsole", "[", "]"}], ";"}], " "}]}], "Code",
+ CellChangeTimes->{{3.950937560630026*^9, 3.95093756139583*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"dc3cb136-ccc5-7346-ac70-3eee3fdb7a7d"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
    RowBox[{"WAEXLogin", "[", 
-    RowBox[{"\"\<kirillbelovtest@gmail.com\>\"", ",", 
-     " ", "\"\<1234asdf\>\""}], "]"}], ";"}], " "}]}], "Code",
+    RowBox[{"\"\<kirillbelovtest@gmail.com\>\"", ",", " ", "\"\<1234asdf\>\"",
+      ",", " ", "\n", "\t", 
+     RowBox[{"\"\<CreadentialHandler\>\"", " ", "->", " ", 
+      RowBox[{"Function", "[", 
+       RowBox[{"$WAEXCredentials", " ", "=", " ", "#"}], "]"}]}]}], "\n", 
+    "]"}], ";"}], " "}]], "Code",
  CellChangeTimes->{
   3.950327494671047*^9, {3.950597782359783*^9, 3.9505977907172985`*^9}, {
-   3.950759146918358*^9, 3.9507591471715126`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"0e8bb6ba-19ed-af48-9848-caeeec7d66e8"],
+   3.950759146918358*^9, 3.9507591471715126`*^9}, {3.9509375435055504`*^9, 
+   3.950937631139393*^9}, 3.950937674733715*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"0e8bb6ba-19ed-af48-9848-caeeec7d66e8"],
 
 Cell[CellGroupData[{
 
@@ -511,8 +520,9 @@ HxMVhKM=
   Selectable->False]], "Output",
  CellChangeTimes->{{3.950845761167938*^9, 3.9508457699300537`*^9}, {
    3.9508458083914986`*^9, 3.9508458285536327`*^9}, {3.9508459102047462`*^9, 
-   3.9508461250888557`*^9}, 3.950846176593134*^9},
- CellLabel->"Out[10]=",ExpressionUUID->"2803dbfc-0e19-3047-84b9-a0a8f16fe8f0"]
+   3.9508461250888557`*^9}, 3.950846176593134*^9, {3.95093768594816*^9, 
+   3.9509377035413895`*^9}},
+ CellLabel->"Out[10]=",ExpressionUUID->"d0c4d2c0-724f-5d46-9dcb-fcefad0b994e"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -523,7 +533,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.9506294412989063`*^9, 3.950629451569666*^9}, 
    3.95063013514406*^9, 3.9506308307915382`*^9, {3.950846183191429*^9, 
    3.950846183967436*^9}, {3.9508462224105644`*^9, 3.9508462251851273`*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"b5967734-7d09-284c-8b6d-6e97f704c624"],
+ CellLabel->"In[11]:=",ExpressionUUID->"b5967734-7d09-284c-8b6d-6e97f704c624"],
 
 Cell[BoxData[
  RowBox[{
@@ -540,23 +550,7 @@ Cell[BoxData[
    3.9507593902042027`*^9, 3.950759391326391*^9}, {3.950760060046301*^9, 
    3.950760062504751*^9}, {3.9507634501968937`*^9, 3.950763451878069*^9}, {
    3.950846187141327*^9, 3.9508461879251976`*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"466767a2-2e38-3d40-ac24-1378821e58dc"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"SocketIOEmit", "[", 
-   RowBox[{
-   "conn", ",", " ", "\"\<unsubscribe-from-emitter\>\"", ",", " ", "\n", "\t", 
-    RowBox[{"<|", 
-     RowBox[{"\"\<emitterName\>\"", " ", "->", 
-      " ", "\"\<AggregateOHLCVEmitter\>\""}], "|>"}], ",", " ", "\n", "\t", 
-    "Print"}], "\n", "]"}], ";"}]], "Code",
- CellChangeTimes->{{3.9506294705438595`*^9, 3.950629487705633*^9}, {
-   3.9506308361431828`*^9, 3.9506308413914185`*^9}, 3.95063135641029*^9, 
-   3.9506749281715736`*^9, {3.9507593587418423`*^9, 3.950759358815275*^9}, {
-   3.9507593902042027`*^9, 3.950759391326391*^9}, {3.950763454492819*^9, 
-   3.950763455822075*^9}, {3.9508462059174175`*^9, 3.9508462066166744`*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"1719175d-856d-9940-a7f4-9079e7995a6a"]
+ CellLabel->"In[12]:=",ExpressionUUID->"466767a2-2e38-3d40-ac24-1378821e58dc"]
 },
 WindowSize->{718.5, 825},
 WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
@@ -575,14 +569,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[1460, 33, 1552, 43, 190, "Code",ExpressionUUID->"0e8bb6ba-19ed-af48-9848-caeeec7d66e8"],
+Cell[1460, 33, 1306, 36, 172, "Code",ExpressionUUID->"dc3cb136-ccc5-7346-ac70-3eee3fdb7a7d"],
+Cell[2769, 71, 670, 14, 85, "Code",ExpressionUUID->"0e8bb6ba-19ed-af48-9848-caeeec7d66e8"],
 Cell[CellGroupData[{
-Cell[3037, 80, 923, 15, 85, "Code",ExpressionUUID->"76783fb0-dcdc-e945-bc40-cfab0446bfad"],
-Cell[3963, 97, 24162, 417, 66, "Output",ExpressionUUID->"2803dbfc-0e19-3047-84b9-a0a8f16fe8f0"]
+Cell[3464, 89, 923, 15, 85, "Code",ExpressionUUID->"76783fb0-dcdc-e945-bc40-cfab0446bfad"],
+Cell[4390, 106, 24213, 418, 66, "Output",ExpressionUUID->"d0c4d2c0-724f-5d46-9dcb-fcefad0b994e"]
 }, Open  ]],
-Cell[28140, 517, 455, 8, 50, "Code",ExpressionUUID->"b5967734-7d09-284c-8b6d-6e97f704c624"],
-Cell[28598, 527, 830, 15, 102, "Code",ExpressionUUID->"466767a2-2e38-3d40-ac24-1378821e58dc"],
-Cell[29431, 544, 785, 14, 102, "Code",ExpressionUUID->"1719175d-856d-9940-a7f4-9079e7995a6a"]
+Cell[28618, 527, 455, 8, 50, "Code",ExpressionUUID->"b5967734-7d09-284c-8b6d-6e97f704c624"],
+Cell[29076, 537, 830, 15, 102, "Code",ExpressionUUID->"466767a2-2e38-3d40-ac24-1378821e58dc"]
 }
 ]
 *)

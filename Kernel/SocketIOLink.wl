@@ -36,6 +36,7 @@ Begin["`Private`"];
 CreateType[SocketIOConnection, {
     "Icon" -> $connectionIcon, 
     "PublicFields" -> {"Endpoint"}, 
+    "Connected" -> False, 
 
     "Endpoint", 
     "HTTPHeaders", 
@@ -130,6 +131,8 @@ With[{
         
         connection["JavaIOSocket"] = javaIOSocket; 
 
+        connection["Connected"] = connection["JavaIOSocket"] @ connected[];
+
         javaIOSocket@connect[]; 
 
         javaLTPClient = JavaNew[LTPClientClass, listenPort]; 
@@ -159,6 +162,9 @@ Block[{
         connection["JavaIOListeners", eventName] = javaIOListener;
         javaIOSocket@on[eventName, javaIOListener]
     ];
+
+    (*Return*)
+    connection
 ]; 
 
 
@@ -175,7 +181,10 @@ Block[{
         javaIOListener = JavaNew[LTPForwardListenerClass, "*", javaLTPClient];
         connection["JavaIOListeners", "*"] = javaIOListener;
         javaIOSocket@onAnyIncoming[javaIOListener]
-    ];
+    ]; 
+
+    (*Return*)
+    connection
 ];
 
 
@@ -195,7 +204,10 @@ Block[{
         javaIOAck = connection["JavaIOAcks", eventName]
     ]; 
     
-    javaIOSocket@emit[eventName, obj, javaIOAck]
+    javaIOSocket@emit[eventName, obj, javaIOAck]; 
+
+    (*Return*)
+    connection
 ]; 
 
 
