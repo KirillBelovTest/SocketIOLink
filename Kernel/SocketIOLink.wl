@@ -223,19 +223,25 @@ With[{
     eventHandlers = connection["EventHandlers"], 
     arg = Append[data, "connection" -> connection]
 }, 
-    Which[
-        eventType === "ack" && KeyExistsQ[ackHandlers, eventName], ackHandlers[eventName][arg], 
-        eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][arg], 
-        Else, Message[SocketIOConnection::errevnt, arg]
+    Module[{res}, 
+        Echo[data, "handlerFunc"];
+        res = Which[
+            eventType === "ack" && KeyExistsQ[ackHandlers, eventName], Echo[ackHandlers[eventName][arg], "handlerFunc Ack"], 
+            eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][arg], 
+            True, Message[SocketIOConnection::errevnt, arg]
+        ];
+        Echo[data, "handlerFunc Success"];
+        res
     ]
 ]; 
 
 
 toJavaJSON[assoc_?AssociationQ] := 
 Block[{json = JavaNew[JSONObjectClass], put}, 
-	KeyValueMap[json@put[#1, toJavaJSON[#2]]&, assoc]; 
-	json
+    KeyValueMap[json@put[#1, toJavaJSON[#2]]&, assoc]; 
+    json
 ]; 
+
 
 toJavaJSON[value: _String | _?NumericQ] := 
 MakeJavaObject[value]; 
