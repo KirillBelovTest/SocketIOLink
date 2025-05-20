@@ -84,7 +84,8 @@ With[{
         connect, 
         extraHeaders, 
         add, 
-        put
+        put, 
+        connected
     }, 
         connection["Endpoint"] = endpoint; 
         connection["HTTPHeaders"] = httpHeaders; 
@@ -131,7 +132,7 @@ With[{
         
         connection["JavaIOSocket"] = javaIOSocket; 
 
-        connection["Connected"] = connection["JavaIOSocket"] @ connected[];
+        connection["Connected"] := connection["JavaIOSocket"] @ connected[];
 
         javaIOSocket@connect[]; 
 
@@ -223,15 +224,10 @@ With[{
     eventHandlers = connection["EventHandlers"], 
     arg = Append[data, "connection" -> connection]
 }, 
-    Module[{res}, 
-        Echo[data, "handlerFunc"];
-        res = Which[
-            eventType === "ack" && KeyExistsQ[ackHandlers, eventName], Echo[ackHandlers[eventName][arg], "handlerFunc Ack"], 
-            eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][arg], 
-            True, Message[SocketIOConnection::errevnt, arg]
-        ];
-        Echo[data, "handlerFunc Success"];
-        res
+    Which[
+        eventType === "ack" && KeyExistsQ[ackHandlers, eventName], ackHandlers[eventName][arg], 
+        eventType === "event" && KeyExistsQ[eventHandlers, eventName], eventHandlers[eventName][arg], 
+        True, Message[SocketIOConnection::errevnt, arg]
     ]
 ]; 
 
